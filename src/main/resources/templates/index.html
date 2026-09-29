@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Machine Maintenance Portal</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f4f6f8;
+            margin: 0;
+        }
+
+        .navbar {
+            background: #1f2937;
+            color: white;
+            padding: 18px 40px;
+        }
+
+        .container {
+            width: 80%;
+            margin: 50px auto;
+        }
+
+        .card-container {
+            display: flex;
+            gap: 20px;
+        }
+
+        .card {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            width: 250px;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+        }
+
+        a {
+            text-decoration: none;
+            color: #2563eb;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="navbar">
+    <h2>Machine Maintenance Portal</h2>
+</div>
+
+<div class="container">
+
+    <h1>Dashboard</h1>
+
+    <p>
+        Welcome to the Machine Maintenance Portal.
+    </p>
+
+    <div class="card-container">
+
+        <div class="card">
+            <h3>Machines</h3>
+            <p>Manage machine information.</p>
+            <a href="/machines">View Machines →</a>
+        </div>
+
+        <div class="card">
+            <h3>Maintenance</h3>
+            <p>Track machine maintenance.</p>
+            <a href="/maintenance">View Maintenance →</a>
+        </div>
+
+    </div>
+
+</div>
+
+</body>
+</html>

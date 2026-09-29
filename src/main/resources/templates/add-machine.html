@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Add Machine</title>
+
+    <style>
+
+        body {
+            font-family: Arial, sans-serif;
+            background: #f4f6f8;
+        }
+
+        .form-container {
+            width: 500px;
+            margin: 50px auto;
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+        }
+
+        input {
+            width: 100%;
+            padding: 10px;
+            margin: 8px 0 15px;
+            box-sizing: border-box;
+        }
+
+        button {
+            background: #2563eb;
+            color: white;
+            border: none;
+            padding: 12px 20px;
+            border-radius: 5px;
+        }
+
+    </style>
+</head>
+
+<body>
+
+<div class="form-container">
+
+    <h1>Add Machine</h1>
+
+    <form action="/machines/save"
+          method="post"
+          th:object="${machine}">
+
+        <label>Machine Code</label>
+
+        <input
+                type="text"
+                th:field="*{machineCode}"
+                placeholder="CNC-001"
+                required>
+
+        <label>Machine Name</label>
+
+        <input
+                type="text"
+                th:field="*{machineName}"
+                placeholder="CNC Machine"
+                required>
+
+        <label>Machine Type</label>
+
+        <input
+                type="text"
+                th:field="*{machineType}"
+                placeholder="CNC">
+
+        <label>Location</label>
+
+        <input
+                type="text"
+                th:field="*{location}"
+                placeholder="Production Floor">
+
+        <button type="submit">
+            Save Machine
+        </button>
+
+    </form>
+
+</div>
+
+</body>
+</html>

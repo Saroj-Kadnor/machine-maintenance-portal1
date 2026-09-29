@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Add Maintenance</title>
+
+    <style>
+
+        body {
+            font-family: Arial, sans-serif;
+            background: #f4f6f8;
+        }
+
+        .form-container {
+            width: 500px;
+            margin: 50px auto;
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+        }
+
+        h1 {
+            margin-bottom: 25px;
+        }
+
+        label {
+            display: block;
+            margin-top: 10px;
+            margin-bottom: 5px;
+        }
+
+        input,
+        textarea,
+        select {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            box-sizing: border-box;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        textarea {
+            height: 100px;
+            resize: vertical;
+        }
+
+        button {
+            background: #2563eb;
+            color: white;
+            border: none;
+            padding: 12px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .back {
+            display: inline-block;
+            margin-top: 15px;
+            text-decoration: none;
+            color: #2563eb;
+        }
+
+    </style>
+</head>
+
+<body>
+
+<div class="form-container">
+
+    <h1>Add Maintenance</h1>
+
+    <form action="/maintenance/save"
+          method="post"
+          th:object="${maintenance}">
+
+        <label>Machine</label>
+
+<select th:field="*{machineId}" required>
+
+    <option value="">
+        Select Machine
+    </option>
+
+    <option
+            th:each="machine : ${machines}"
+            th:value="${machine.id}"
+            th:text="${machine.machineCode + ' - ' + machine.machineName}">
+    </option>
+
+</select>
+
+        <label>Description</label>
+
+        <textarea
+                th:field="*{description}"
+                placeholder="Describe the maintenance problem..."
+                required>
+        </textarea>
+
+
+        <label>Assigned To</label>
+
+        <input
+                type="text"
+                th:field="*{assignedTo}"
+                placeholder="Technician name"
+                required>
+
+
+        <label>Status</label>
+
+        <select th:field="*{status}">
+
+            <option value="PENDING">
+                PENDING
+            </option>
+
+            <option value="IN_PROGRESS">
+                IN_PROGRESS
+            </option>
+
+            <option value="COMPLETED">
+                COMPLETED
+            </option>
+
+        </select>
+
+
+        <button type="submit">
+            Save Maintenance
+        </button>
+
+    </form>
+
+    <a href="/maintenance" class="back">
+        ← Back to Maintenance
+    </a>
+
+</div>
+
+</body>
+</html>
