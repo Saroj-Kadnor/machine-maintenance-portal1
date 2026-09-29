@@ -108,7 +108,7 @@ For Windows:
 
 The application runs at:
 
-```text
+
 http://localhost:8080
 ```
 
@@ -116,7 +116,6 @@ http://localhost:8080
 
 The project follows a feature-based Git workflow:
 
-```text
 main
   │
   └── develop
@@ -124,12 +123,4 @@ main
        ├── feature/machine-management
        ├── feature/mvp-functions
        └── bugfix/<name>
-```
 
-### Branches
-
-* **main** – Stable release code
-* **develop** – Development branch
-* **feature/** – New functionality
-* **bugfix/** – Bug fixes
-* **docs/** – D
